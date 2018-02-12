@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+  <h1 class="h2">Dashboard</h1>
+</div>
+
+<div class="row mb-20">
+  <div class="col-lg-3 col-sm-6 mb-sm-2">
+    <app-dashboard-total card_header="Applications" [card_body]="8763"></app-dashboard-total>
+  </div>
+  <div class="col-lg-3 col-sm-6 mb-sm-2">
+    <app-dashboard-total card_header="IPQ Soft Pulls" [card_body]="24584"></app-dashboard-total>
+  </div>
+  <div class="col-lg-3 col-sm-6 mb-sm-2">
+    <app-dashboard-total card_header="Approval %" [card_body]="45"></app-dashboard-total>
+  </div>
+  <div class="col-lg-3 col-sm-6 mb-sm-2">
+    <app-dashboard-total card_header="New Customer" [card_body]="872"></app-dashboard-total>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6 col-sm-12">
+    <app-cb-count-graph></app-cb-count-graph>
+  </div>
+  <div class="col-lg-6 col-sm-12">
+    <app-product-count-graph></app-product-count-graph>
+  </div>
+</div>
