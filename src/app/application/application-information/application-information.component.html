@@ -1,0 +1,278 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+  <h1 class="h2">Application Information</h1>
+</div>
+
+<app-application-list></app-application-list>
+
+<div *ngIf="selectedApplication; else infoText">
+  <div class="row mb-3">
+    <div class="col-sm-10">
+      <h3>{{ selectedApplication.primaryApplicant.applicationNumber }}</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-lg-6 mb-3">
+      <div class="card card-block">
+        <div class="card-header">
+          <h5 class="text-secondary">General Information</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group row">
+              <label for="inputGeneralEmail" class="col-sm-3 col-form-label text-lg-right">Email:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputGeneralEmail" [value]="selectedApplication.applicationGeneral.email" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputGeneralProduct" class="col-sm-3 col-form-label text-lg-right">Product:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputGeneralProduct" [value]="selectedApplication.applicationGeneral.product" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputGeneralAmount" class="col-sm-3 col-form-label text-lg-right">Amount:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputGeneralAmount" [value]="selectedApplication.applicationGeneral.amount | currency" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputGeneralPurpose" class="col-sm-3 col-form-label text-lg-right">Purpose:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputGeneralPurpose" [value]="selectedApplication.applicationGeneral.purpose" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputGeneralOriginatingSystem" class="col-sm-3 col-form-label text-lg-right">Orig System:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputGeneralOriginatingSystem" [value]="selectedApplication.applicationGeneral.originatingSystem" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputGeneralLanguage" class="col-sm-3 col-form-label text-lg-right">Language:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputGeneralLanguage"  [value]="selectedApplication.applicationGeneral.language" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputGeneralSource" class="col-sm-3 col-form-label text-lg-right">Source:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputGeneralSource" [value]="selectedApplication.applicationGeneral.source" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputGeneralLender" class="col-sm-3 col-form-label text-lg-right">Lender:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputGeneralLender" [value]="selectedApplication.applicationGeneral.source" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputGeneralPreferredContactTime" class="col-sm-3 col-form-label text-lg-right">Pref Contact Time:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputGeneralPreferredContactTime" [value]="selectedApplication.applicationGeneral.preferredContactTime" readonly>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-6 mb-3">
+      <div class="card card-block">
+        <div class="card-header">
+          <h5 class="text-secondary">History</h5>
+        </div>
+        <div class="card-body">
+          <table class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">User</th>
+                <th scope="col">AC</th>
+                <th scope="col">Ltr</th>
+                <th scope="col">Rte</th>
+                <th scope="col">Comments</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr scope="row">
+                <td>12/29</td>
+                <td>09:06:57</td>
+                <td></td>
+                <td>AP</td>
+                <td></td>
+                <td>F14</td>
+                <td>* ACTION BASED ON: SM POST BUREAU FINAL DEC</td>
+              </tr>
+              </tbody>
+            </table>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-lg-6 mb-3">
+      <div class="card card-block">
+        <div class="card-header">
+          <h5 class="text-secondary">Primary Applicant</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantFirstName" class="col-sm-3 col-form-label text-lg-right">First Name:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantFirstName" [value]="selectedApplication.primaryApplicant.firstName" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantMiddleInitial" class="col-sm-3 col-form-label text-lg-right">Middle Initial:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantMiddleInitial" [value]="selectedApplication.primaryApplicant.middleInitial" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantLastName" class="col-sm-3 col-form-label text-lg-right">Last Name:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantLastName" [value]="selectedApplication.primaryApplicant.lastName" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantSuffix" class="col-sm-3 col-form-label text-lg-right">Suffix:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantSuffix" [value]="selectedApplication.primaryApplicant.suffixName" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantDateOfBirth" class="col-sm-3 col-form-label text-lg-right">Date of Birth:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantDateOfBirth" [value]="selectedApplication.primaryApplicant.dateOfBirth.toLocaleDateString()" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantSSN" class="col-sm-3 col-form-label text-lg-right">SSN:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantSSN" [value]="selectedApplication.primaryApplicant.ssn" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantStreetAddress" class="col-sm-3 col-form-label text-lg-right">Street Address:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantStreetAddress" [value]="selectedApplication.primaryApplicant.streetAddress" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantCity" class="col-sm-3 col-form-label text-lg-right">City:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantCity" [value]="selectedApplication.primaryApplicant.city" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantState" class="col-sm-3 col-form-label text-lg-right">State:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantState" [value]="selectedApplication.primaryApplicant.state" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantZip" class="col-sm-3 col-form-label text-lg-right">Zipcode:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantZip" [value]="selectedApplication.primaryApplicant.zipcode" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPrimaryApplicantPhone" class="col-sm-3 col-form-label text-lg-right">Phone:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputPrimaryApplicantPhone" [value]="selectedApplication.primaryApplicant.phone" readonly>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-6 mb-3">
+      <div class="card card-block">
+        <div class="card-header">
+          <h5 class="text-secondary">Secondary Applicant</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantFirstName" class="col-sm-3 col-form-label text-lg-right">First Name:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantFirstName" [value]="selectedApplication.secondaryApplicant.firstName" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantMiddleInitial" class="col-sm-3 col-form-label text-lg-right">Middle Initial:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantMiddleInitial" [value]="selectedApplication.secondaryApplicant.middleInitial" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantLastName" class="col-sm-3 col-form-label text-lg-right">Last Name:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantLastName" [value]="selectedApplication.secondaryApplicant.lastName" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantSuffix" class="col-sm-3 col-form-label text-lg-right">Suffix:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantSuffix" [value]="selectedApplication.secondaryApplicant.suffixName" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantDateOfBirth" class="col-sm-3 col-form-label text-lg-right">Date of Birth:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantDateOfBirth" [value]="selectedApplication.secondaryApplicant.dateOfBirth.toLocaleDateString()" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantSSN" class="col-sm-3 col-form-label text-lg-right">SSN:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantSSN" [value]="selectedApplication.secondaryApplicant.ssn" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantStreetAddress" class="col-sm-3 col-form-label text-lg-right">Street Address:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantStreetAddress" [value]="selectedApplication.secondaryApplicant.streetAddress" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantCity" class="col-sm-3 col-form-label text-lg-right">City:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantCity" [value]="selectedApplication.secondaryApplicant.city" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantState" class="col-sm-3 col-form-label text-lg-right">State:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantState" [value]="selectedApplication.secondaryApplicant.state" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantZip" class="col-sm-3 col-form-label text-lg-right">Zipcode:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantZip" [value]="selectedApplication.secondaryApplicant.zipcode" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputSecondaryApplicantPhone" class="col-sm-3 col-form-label text-lg-right">Phone:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control-plaintext" id="inputSecondaryApplicantPhone" [value]="selectedApplication.secondaryApplicant.phone" readonly>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #infoText>
+  <h6 class="text-secondary">Please select an application</h6>
+</ng-template>

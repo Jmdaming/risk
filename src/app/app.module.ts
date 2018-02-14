@@ -9,9 +9,11 @@ import { DashboardTotalComponent } from './dashboard-total/dashboard-total.compo
 import { CbCountGraphComponent } from './cb-count-graph/cb-count-graph.component';
 import { ProductCountGraphComponent } from './product-count-graph/product-count-graph.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {RouterModule, Routes} from '@angular/router';
-import { ApplicationInformationComponent } from './application-information/application-information.component';
-import {FormsModule} from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import {ApplicationInformationComponent} from './application/application-information/application-information.component';
+import {ApplicationListComponent} from './application/application-list/application-list.component';
+import {ApplicationListItemComponent} from './application/application-list-item/application-list-item.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -29,7 +31,9 @@ const appRoutes: Routes = [
     CbCountGraphComponent,
     ProductCountGraphComponent,
     DashboardComponent,
-    ApplicationInformationComponent
+    ApplicationInformationComponent,
+    ApplicationListComponent,
+    ApplicationListItemComponent
   ],
   imports: [
     BrowserModule,
